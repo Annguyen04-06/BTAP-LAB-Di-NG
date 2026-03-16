@@ -1,0 +1,58 @@
+﻿=== WoofTheme ===
+"" tabindex="-1">Tệp giao diện Tệp Theme.kt là tệp chứa toàn bộ thông tin về giao diện (theme) của ứng dụng, được xác định thông qua màu sắc, kiểu chữ và hình dạng. Đây là tệp quan trọng mà bạn cần biết. Bên trong tệp này là thành phần kết hợp WoofTheme() , giúp thiết lập màu sắc, kiểu chữ và hình dạng của ứng dụng. @Composable fun WoofTheme ( darkTheme : Boolean = isSystemInDarkTheme (), // Dynamic color is available on Android 12+ dynamicColor : Bool
+
+ass="devsite-syntax-o">= ! darkTheme } Trong MainActivity.kt , WoofTheme() được thêm vào để cung cấp tính năng Tuỳ chỉnh giao diện Material cho toàn bộ ứng dụng. class MainActivity : ComponentActivity () { override fun onCreate ( savedInstanceState : Bundle?) <span class="devs
+
+e ) setContent { WoofTheme { Surface ( modifier = Modifier . fillMaxSize () ) { WoofApp () } } } 
+
+=== setUpEdgeToEdge ===
+/span> { SideEffect { setUpEdgeToEdge ( view , darkTheme ) } } MaterialTheme ( colorScheme = colorScheme , shapes = Shapes , <span c
+
+nding on whether the [darkTheme] is enabled or not. */ private fun setUpEdgeToEdge ( view : View , darkTheme : Boolean ) { val window = ( view . context as Activity <span clas
+
+/span> { SideEffect { setUpEdgeToEdge ( view , darkTheme ) } } MaterialTheme ( colorScheme = colorScheme , shapes = Shapes , <span c
+
+=== Shapes = ===
+=== Typography = ===
+=== LightColors ===
+w"> DarkColors else - > LightColors } val view = LocalView . current if ( ! view . isInEditMode ) { SideEffect { <span class="devsite-s
+
+ss="devsite-syntax-w"> androidx.core.view.WindowCompat private val LightColors = lightColorScheme ( primary = md_theme_light_primary , onPrimary = md_theme_light_onPrimary , primaryContainer = md_theme_light_primaryContainer , <span 
+
+w"> DarkColors else - > LightColors } val view = LocalView . current if ( ! view . isInEditMode ) { SideEffect { <span class="devsite-s
+
+=== DarkColors ===
+ } darkTheme - > DarkColors else - > LightColors } val view = LocalView . current if ( ! view . isInEditMode ) <span class="devsite-synta
+
+e_light_scrim , ) private val DarkColors = darkColorScheme ( primary = md_theme_dark_primary , onPrimary = md_theme_dark_onPrimary , primaryContainer = md_theme_dark_primaryContainer , <span clas
+
+ } darkTheme - > DarkColors else - > LightColors } val view = LocalView . current if ( ! view . isInEditMode ) <span class="devsite-synta
+
+=== Scaffold ===
+e-syntax-kd">fun WoofApp () { Scaffold { it - > LazyColumn ( contentPadding = it ) { items ( dogs ) { DogItem ( <s
+
+ 7. Thêm thanh trên cùng Scaffold là một bố cục cung cấp các ô cho nhiều thành phần và thành phần trên màn hình, chẳng hạn như Image , Row hoặc Column . Scaffold cũng cung cấp một ô cho TopAppBar mà bạn sẽ dùng trong phần này. TopAppBar có thể được sử dụng cho nhiều mục đích, nhưng trong trường hợp 
+
+Bar : chính giữa, nhỏ, trung bình và lớn. Trong lớp học lập trình này, bạn sẽ triển khai thanh ứng dụng trên cùng chính giữa. Bạn sẽ tạo một thành phần kết hợp giống như ảnh chụp màn hình dưới đây rồi đặt vào phần topBar của Scaffold . <img alt="172417c7b64372f7.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-material-theming/img/172417c7b64372f7.png?hl=vi" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-material-theming/img/172417c7b64372f7_36.png?hl=vi 36w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-material-theming/img/172417c7b64372f7_48.png?hl=vi 48w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-material-theming/img/172417c7b64372f7_72.png?hl=vi 72w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-material-theming/img/172417c7b64372f7_96.png?hl=vi 96w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-material-theming/img/172417c7b64372f7_480.png?hl=vi 480w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-material-theming/img/172417c7b64372f7_720.png?hl=vi 720w,https://developer.android.com/static/codelabs/basic-android-kotlin-compose-material-theming/img/172417c7b64372f7_856.png?hl=vi 856w,https://developer.android.com/stati
+
+=== TopAppBar ===
+ translate="no">Image , Row hoặc Column . Scaffold cũng cung cấp một ô cho TopAppBar mà bạn sẽ dùng trong phần này. TopAppBar có thể được sử dụng cho nhiều mục đích, nhưng trong trường hợp này, bạn sẽ dùng nó để thể hiện thương hiệu cũng như bản sắc của ứng dụng. Có 4 loại TopAppBar : chính giữa, nhỏ, trung bình và lớn. Trong lớp học lập trình này, bạn sẽ triển khai thanh ứng dụng trên cùng chính giữa. Bạn sẽ tạo một thành phần kết hợp giống như ảnh chụp màn hình dưới đây rồi đặt vào phần topBar của Scaffold . <img alt="172417c7b64372f7.png" sizes="(max-width: 840px) 100vw, 856px" src="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-material-theming/img/172417c7b64372f7.png?hl=vi" srcset="https://developer.android.com/static/codelabs/basic-android-kotlin-compose-mate
+
+êm hình ảnh và văn bản vào thanh trên cùng" id="add-image-and-text-to-the-top-bar" is-upgraded="" tabindex="-1">Thêm hình ảnh và văn bản vào thanh trên cùng Trong tệp MainActivity.kt , hãy tạo một thành phần kết hợp có tên là WoofTopAppBar() có modifier không bắt buộc. @Composable fun WoofTopAppBar ( modifier : Modifier = Modifier ) { } Scaffold hỗ
+
+ax-p">} } Trong Scaffold , hãy thêm thuộc tính topBar rồi thiết lập thuộc tính đó thành WoofTopAppBar() . Scaffold ( topBar = { WoofTopAppBar () } ) Dưới đây là giao diện của thành phần kết hợp WoofApp() : @Composable fun WoofApp</s
+
+=== DogItem ===
+ Mở tệp MainActivity.kt . Tệp này chứa đoạn mã để tạo một danh sách đơn giản cho thấy hình ảnh, tên và tuổi của một chú chó. WoofApp() chứa LazyColumn cho thấy các DogItem . DogItem() chứa Row cho thấy hình ảnh và thông tin về chú chó. DogIcon() hiển thị ảnh của chú chó. DogInformation() chứa tên và tuổi của chú chó. WoofPreview() cho phép bạn xem trước ứng dụng trong ngăn Design (Thiết kế). Lưu ý : Bạn có thể nhận thấy rằng mỗi phương thức @Composable đều có một Đối tượng sửa đổi được thêm vào dưới dạng tham số. Trong Compose, tốt nhất bạn nên truyền một tham số đối tượng sửa đổi đến các hàm có khả năng kết hợp. Do các hàm này cho phép thành phần kết hợp mẹ truyền thông tin theo ngữ cảnh cho thành phần kết hợp con. Lấy nút làm ví dụ, có thể một thành phần mẹ muốn nút con sử dụng kích thước đầy đủ hiện tại, trong khi có thể một thành phần mẹ khác lại muốn nút đó gói nội dung. Điều này giúp mã có thể tái sử dụng nhiều hơn. Tham số này thường được đặt tên là "đối tượng sửa đổi" và sẽ xuất hiện dưới dạng tham số
+
+de> chứa DogIcon() và DogInformation() bằng Card để phân biệt màu của mục trong danh sách với màu nền. Trong hàm có khả năng kết hợp DogItem() , hãy gói Row() bằng một Card() . Card () { Row ( modifier = modifier . fillMaxWidth () . padding ( dimen
+
+span class="devsite-syntax-w"> } } Do Card hiện là thành phần kết hợp con đầu tiên trong DogItem() , hãy truyền đối tượng sửa đổi từ DogItem() sang Card , rồi cập nhật đối tượng sửa đổi của Row thành một thực thể mới của Modifier . Card ( modifier = modifier ) { Row ( modifier = <span class="de
+
+=== LazyColumn ===
+ tên ứng dụng, tên chó, nội dung mô tả và các chuỗi khác. Mở tệp MainActivity.kt . Tệp này chứa đoạn mã để tạo một danh sách đơn giản cho thấy hình ảnh, tên và tuổi của một chú chó. WoofApp() chứa LazyColumn cho thấy các DogItem . DogItem() chứa Row cho thấy hình ảnh và thông tin về chú chó. DogIcon() hiển thị ảnh của chú chó. DogInformation() chứa tên và tuổi của chú chó. WoofPreview() cho phép bạn xem trước ứng dụng trong ngăn Design (Thiết kế). Lưu ý : Bạn có thể nhận thấy rằng mỗi phương thức @Composable đều có một Đối tượng sửa đổi được thêm vào dưới dạng tham số. Trong Compose, tốt nhất bạn nên truyền một tham số đối tượng sửa đổi đến các hàm có khả năng kết hợp. Do các hàm này cho phép thành phần kết hợp mẹ truyền thông tin theo ngữ cảnh cho thành phần kết hợp con. Lấy nút làm ví dụ, có thể một thành phần mẹ muốn nút con sử dụng kích thước đầy đủ hiện tại, trong khi có thể một thành phần mẹ khác lại muốn nút đó gói nội dung. Điều này giúp mã có thể tái sử dụng nhiều hơn. Tham số này thường được đặt t
+
+te-syntax-w"> { it - > LazyColumn ( contentPadding = it ) { items ( dogs ) { DogItem ( dog = it , modifier<
+
+ PaddingValues . Hãy đọc thêm tại đây . Giá trị contentWindowInsets được truyền cho LazyColumn dưới dạng contentPadding . @Composable fun WoofApp () { Scaffold { it - > LazyColumn ( contentPadding = it <span class
+

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Woof</string>
+    <string name="years_old">%1$d years old</string>
+</resources>

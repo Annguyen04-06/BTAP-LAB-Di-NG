@@ -1,0 +1,19 @@
+# Root IDE and OS files
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Android local config
+**/local.properties
+
+# Build outputs
+**/build/
+**/.cxx/
+**/captures/
+
+# Gradle cache directories in project
+**/.gradle/
+
+# Kotlin build caches
+**/.kotlin/

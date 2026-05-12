@@ -53,4 +53,8 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
 }
+
+// Add tasks for running console apps from IDE - these tasks are now in console module
+// See console/build.gradle.kts for the actual run tasks (bai1, bai2, bai3, bai4, bai5)
